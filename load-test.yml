@@ -18,7 +18,7 @@ config:
       arrivalRate: 1         # Start at 1 user per second...
       rampTo: 10             # ...and gradually increase to 20 users per second
       
-    - name: "Spike (Black Friday)"
+    - name: "Spike"
       duration: 30           # 30 seconds
       arrivalRate: 20       # 100 users per second immediately
 
