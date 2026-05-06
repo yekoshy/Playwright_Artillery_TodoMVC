@@ -60,6 +60,8 @@ npm init playwright@latest
 ```
 *(Note: After running the initialization command, follow the setup wizard choices exactly as shown in `initializePlaywright.png`)*
 
+<img src="./initializePlaywright.png" alt="Playwright Initialization Setup" width="600">
+
 ---[back](#home)
 <a id="step-2"></a>
 ## 🎥 Step 2: Record a Test Session
