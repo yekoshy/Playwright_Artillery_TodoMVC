@@ -2,6 +2,7 @@ const { TodoPage } = require('./TodoPage');
 
 // Artillery injects page, vuContext, and events
 async function runBenchmark(page, vuContext, events) {
+    page.setDefaultTimeout(180000);
   // 1. Get the framework variables defined in the YAML scenarios
   // Access them from vuContext.scenario.variables
   const frameworkName = vuContext.scenario.variables.frameworkName;
