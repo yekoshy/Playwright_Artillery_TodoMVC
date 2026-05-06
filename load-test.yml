@@ -1,0 +1,26 @@
+config:
+  target: "https://todomvc.com"
+  engines:
+    playwright:
+      # Tell Artillery to launch browsers without a UI (required for load testing)
+      headless: true
+      defaultTimeout: 180000 # 3 minutes 
+  processor: "./artillery-processor.js"
+  phases:
+    - name: "Warm up"
+      duration: 60           # 1 minute
+      arrivalRate: 1         # 1 user per second
+      
+    - name: "Ramp up"
+      duration: 180          # 3 minutes
+      arrivalRate: 1         # Start at 1 user per second...
+      rampTo: 20             # ...and gradually increase to 20 users per second
+      
+    - name: "Spike (Black Friday)"
+      duration: 30           # 30 seconds
+      arrivalRate: 100       # 100 users per second immediately
+
+scenarios:
+  - name: "TodoMVC Benchmark User Journey"
+    engine: "playwright"
+    testFunction: "runBenchmark" # This matches the function we will create in Step 3
