@@ -1,0 +1,63 @@
+config:
+  target: "https://todomvc.com"
+  engines:
+    playwright:
+      headless: true
+      trace: true
+      defaultNavigationTimeout: 60000 # 60 seconds
+      defaultActionTimeout: 30000     # 30 seconds
+  processor: "./artillery-processor-v2.js"
+  phases:
+    - name: "Warm up"
+      duration: 60           # 1 minute
+      arrivalRate: 1         # 1 user per second
+      
+    - name: "Ramp up"
+      duration: 120          # 2 minutes
+      arrivalRate: 1         
+      rampTo: 10             
+      
+    - name: "Spike"
+      duration: 10           # 10 seconds
+      arrivalRate: 20        
+
+scenarios:
+  - name: "React Journey"
+    engine: "playwright"
+    testFunction: "runBenchmark" 
+    weight: 1
+    variables:
+      frameworkName: "React"
+      frameworkUrl: "https://todomvc.com/examples/react/dist/"
+
+  - name: "Angular Journey"
+    engine: "playwright"
+    testFunction: "runBenchmark" 
+    weight: 1
+    variables:
+      frameworkName: "Angular"
+      frameworkUrl: "https://todomvc.com/examples/angular/dist/browser/#/all"
+
+  - name: "Vue Journey"
+    engine: "playwright"
+    testFunction: "runBenchmark" 
+    weight: 1
+    variables:
+      frameworkName: "Vue"
+      frameworkUrl: "https://todomvc.com/examples/vue/dist/#/"
+
+  - name: "Vanilla JS Journey"
+    engine: "playwright"
+    testFunction: "runBenchmark" 
+    weight: 1
+    variables:
+      frameworkName: "VanillaJS"
+      frameworkUrl: "https://todomvc.com/examples/javascript-es6/dist/"
+
+  - name: "jQuery Journey"
+    engine: "playwright"
+    testFunction: "runBenchmark" 
+    weight: 1
+    variables:
+      frameworkName: "jQuery"
+      frameworkUrl: "https://todomvc.com/examples/jquery/dist/#/all"

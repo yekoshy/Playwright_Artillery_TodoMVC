@@ -9,6 +9,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@artilleryio/playwright-reporter": "^1.1.3",
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0",
     "artillery": "^2.0.31",

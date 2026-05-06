@@ -15,7 +15,7 @@ for (const framework of frameworks) {
   test.describe(`${framework.name} TodoMVC`, () => {
     test(`TodoMVC Functional Check for ${framework.name}`, async ({ page }) => {
   // Increase the timeout to 3 minutes (180,000 milliseconds)
-  test.setTimeout(180000); 
+  //test.setTimeout(180000);
   
   // 1. Initialize the POM with the page and your variable URL
   const todoPage = new TodoPage(page, framework.url);

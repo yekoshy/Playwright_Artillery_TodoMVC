@@ -1,0 +1,8 @@
+{
+    "yaml.schemas": {
+        "https://www.artillery.io/schema.json": [
+            "file:///c%3A/Users/yasmi/Desktop/Playwright_Artillery_TodoMVC/load-test.yml",
+            "file:///c%3A/Users/yasmi/Desktop/Playwright_Artillery_TodoMVC/load-frameworks-test.yml"
+        ]
+    }
+}

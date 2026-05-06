@@ -3,6 +3,7 @@ const { TodoPage } = require('./TodoPage');
 
 // Artillery injects the Playwright 'page' object directly into this function
 async function runBenchmark(page) {
+  page.setDefaultTimeout(180000);
   const todoPage = new TodoPage(page, 'https://todomvc.com/examples/react/dist/');
 
   // 1. Open the page
